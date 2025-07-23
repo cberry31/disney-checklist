@@ -1,0 +1,11 @@
+version: '3'
+services:
+  disney-checklist-server:
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    container_name: disney-checklist-server
+    ports:
+      - "8080:8080"
+    environment:
+      - LOGGING_LEVEL=DEBUG

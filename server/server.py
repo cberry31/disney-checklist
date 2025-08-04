@@ -42,44 +42,39 @@ def update_checklist(land, attraction_id):
 
         didRide = land_data.get(attraction_id, {}).get("didRide", False)
         land_data[attraction_id]["didRide"] = not didRide
+        checklist_data[land] = land_data
+        logging.debug(f"Updated {land} {attraction_id} to {land_data[attraction_id]['didRide']}")
 
     with open("./data/attractions.json", "w") as file:
         json.dump(checklist_data, file, indent=4)
+        logging.debug(f"Updated {land} {attraction_id} to {land_data[attraction_id]['didRide']}")
 
     return Response("OK", status=200)
 
+# TODO: Implement a way to update the file with an array of attractions
 
-@app.route("/checklist", methods=["PUT"])
+
+@app.route("/checklist", methods=["POST"])
 def edit_checklist():
-    try:
-        new_data: dict = json.loads(request.data)
-        data: dict = {}
-        with open("./data/attractions.json", "r") as file:
-            data = json.load(file)
+    data = json.loads(request.data)
+    park = data["park"]
+    checked = data["checked"]
+    with open("data/attractions.json", "r+") as file:
+        checklistData = json.load(file)
+        checklistParkData = checklistData[park]
+        for attraction in checklistParkData.keys():
+            if checklistParkData[attraction]["didRide"] and attraction not in checked:
+                checklistParkData[attraction]["didRide"] = False
+            elif not checklistParkData[attraction]["didRide"] and attraction in checked:
+                checklistParkData[attraction]["didRide"] = True
+        checklistData[park] = checklistParkData
+        file.write(checklistData)
 
-        if data is None or data == {}:
-            return Response("Checklist not found", status=404)
-
-        for land in new_data.keys():
-            if land not in data:
-                raise ValueError(f"Land '{land}' not found in checklist data")
-            for attraction in new_data[land]:
-                attraction_id = attraction.get("id")
-                if attraction_id in data[land]:
-                    data[land][attraction_id]["didRide"] = attraction.get(
-                        "didRide", False
-                    )
-
-        with open("./data/attractions.json", "w") as file:
-            json.dump(data, file, indent=4)
-        return Response("Checklist updated successfully", status=200)
-
-    except json.JSONDecodeError:
-        return Response("Invalid JSON format", status=400)
-    except Exception as e:
-        logging.error(f"Error updating checklist: {e}")
-        return Response(str(e), status=500)
-
+@app.route("/test", methods=["POST"])
+def test():
+    data = json.loads(request.data)
+    logging.debug(data)
+    return Response("OK", status=200)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)

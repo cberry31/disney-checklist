@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scripts/list.js"></script>
+    <link rel="stylesheet" href="styles/checkbox.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <title>Checklist</title>
+</head>
+
+<body>
+    <script>startListPage()</script>
+    <div class="list-body">
+        <a href="index.html" class="back-button">Back to Home</a>
+        <form class="ride-list" id="rideList" method="POST">
+            <script>getListItems()</script>
+        </form>
+    </div>
+</body>
+
+</html>

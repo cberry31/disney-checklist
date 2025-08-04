@@ -243,12 +243,12 @@
         "274": {
             "name": "Disneyland Monorail",
             "land": "Tomorrowland",
-            "didRide": false
+            "didRide": true
         },
         "276": {
             "name": "Finding Nemo Submarine Voyage",
             "land": "Tomorrowland",
-            "didRide": false
+            "didRide": true
         },
         "284": {
             "name": "Space Mountain",
@@ -258,7 +258,7 @@
         "286": {
             "name": "Star Tours - The Adventures Continue",
             "land": "Tomorrowland",
-            "didRide": false
+            "didRide": true
         }
     },
     "california_adventure": {
@@ -410,6 +410,203 @@
         "13959": {
             "name": "The Bakery Tour",
             "land": "San Fransokyo Square",
+            "didRide": false
+        }
+    },
+    "food": {
+        "1": {
+            "name": "Pineapple Pomegranate Lemonade",
+            "land": "Paradise Garden Grill",
+            "didRide": false
+        },
+        "2": {
+            "name": "Strawberry Horchata Churro",
+            "land": "Senor Buzz Churros",
+            "didRide": false
+        },
+        "3": {
+            "name": "Iced Pandan Cooler",
+            "land": "Bengal Barbecue",
+            "didRide": false
+        },
+        "4": {
+            "name": "Daisy's Goody-Goody Donuts",
+            "land": "Cafe Daisy",
+            "didRide": false
+        },
+        "5": {
+            "name": "Straw-batty Churro",
+            "land": "Churros near the Haunted Mansion",
+            "didRide": false
+        },
+        "6": {
+            "name": "Citrus Churro",
+            "land": "Churros near Sleeping Beauty Castle",
+            "didRide": false
+        },
+        "7": {
+            "name": "Caramel Apple Bread Pudding",
+            "land": "Aunt Cass Cafe",
+            "didRide": false
+        },
+        "8": {
+            "name": "Ube-Vanilla Twist Soft-Serve",
+            "land": "Cozy Cone Motel 2",
+            "didRide": false
+        },
+        "9": {
+            "name": "Thai Seafood Pasta",
+            "land": "Lamplight Lounge",
+            "didRide": false
+        },
+        "10": {
+            "name": "Blueberry Matcha Iced Latte",
+            "land": "Pym Test Kitchen",
+            "didRide": false
+        },
+        "11": {
+            "name": "Ursula Enchanted Waffles",
+            "land": "Schmoozies",
+            "didRide": false
+        },
+        "12": {
+            "name": "Cars Land Lighted Cone Sipper",
+            "land": "Cozy Cone Motel",
+            "didRide": false
+        },
+        "13": {
+            "name": "Haunted Heatwave Pizza",
+            "land": "Pizza Planet",
+            "didRide": false
+        },
+        "14": {
+            "name": "Seasonal Alien Macarooooon",
+            "land": "Pizza Planet",
+            "didRide": false
+        },
+        "15": {
+            "name": "Darth by Chocolate",
+            "land": "Galactic Grill",
+            "didRide": false
+        },
+        "16": {
+            "name": "Rest in Chocolate",
+            "land": "Gibson Girl Ice Cream Parlor",
+            "didRide": false
+        },
+        "17": {
+            "name": "Cherry Cobbler Funnel Cake Fries",
+            "land": "Hungry Bear Barbecue Jamboree",
+            "didRide": false
+        },
+        "18": {
+            "name": "Poison Apple Cake",
+            "land": "Plazza Inn",
+            "didRide": false
+        },
+        "19": {
+            "name": "Tombstone Chocolate Cake",
+            "land": "Plazza Inn",
+            "didRide": false
+        },
+        "20": {
+            "name": "Coffee Fritters",
+            "land": "Royal Street Veranda",
+            "didRide": false
+        },
+        "21": {
+            "name": "The MONSTER Funnel Cake",
+            "land": "Stage Door Cafe",
+            "didRide": false
+        },
+        "22": {
+            "name": "The Bride Sundae",
+            "land": "The Golden Horseshoe",
+            "didRide": false
+        },
+        "23": {
+            "name": "Caramel Apple Cheesecake",
+            "land": "Jolly Holliday Bakery Cafe",
+            "didRide": false
+        },
+        "24": {
+            "name": "Chocolate Churro",
+            "land": "Churros near Buzz Lightyear Astro Blasters",
+            "didRide": false
+        },
+        "25": {
+            "name": "Caramel Apple Dipping Sauce",
+            "land": "Churros near Casey Jr. Circus Train",
+            "didRide": false
+        },
+        "26": {
+            "name": "Supernova Pretzel",
+            "land": "Pretzels near Star Tours \u2013 The Adventures Continue",
+            "didRide": false
+        },
+        "27": {
+            "name": "Vampire Mickey-shaped Sourdough Bread",
+            "land": "Aunt Cass Cafe",
+            "didRide": false
+        },
+        "28": {
+            "name": "Spell Bar",
+            "land": "Award Wieners",
+            "didRide": false
+        },
+        "29": {
+            "name": "Peanut Butter Whiskey Cold Brew Cocktail",
+            "land": "Cappuccino Cart",
+            "didRide": false
+        },
+        "30": {
+            "name": "Chocolate Lava Cake",
+            "land": "Clarabelle\u2019s Hand-Scooped Ice Cream",
+            "didRide": false
+        },
+        "31": {
+            "name": "Mango Hard Float",
+            "land": "Clarabelle\u2019s Hand-Scooped Ice Cream",
+            "didRide": false
+        },
+        "32": {
+            "name": "Seaborn Blackberry Margarita",
+            "land": "Flo's Cafe",
+            "didRide": false
+        },
+        "33": {
+            "name": "Haunted Horchata Cocktail",
+            "land": "Hollywood Lounge",
+            "didRide": false
+        },
+        "34": {
+            "name": "Seasonal Baymax Macaron",
+            "land": "Lucky Fortune Cookery",
+            "didRide": false
+        },
+        "35": {
+            "name": "Boo Berry Shake",
+            "land": "Smokejumpers",
+            "didRide": false
+        },
+        "36": {
+            "name": "Oogie Boogie Lemonade",
+            "land": "Smokejumpers",
+            "didRide": false
+        },
+        "37": {
+            "name": "Caramel-Pecan Irish Cream Cold Brew Cocktail",
+            "land": "Smokejumpers",
+            "didRide": false
+        },
+        "38": {
+            "name": "Peanut Butter-Marshmallow Churro",
+            "land": "Churros near Redwood Creek Challenge Trail",
+            "didRide": false
+        },
+        "39": {
+            "name": "Coffee and Donut Churro",
+            "land": "Willie\u2019s Churros at Buena Vista Street",
             "didRide": false
         }
     }

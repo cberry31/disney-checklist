@@ -1,0 +1,120 @@
+@font-face {
+    font-family: Disney;
+    src: url("../fonts/InsideOut-DAp0.ttf");
+}
+
+body {
+    background-color: rgb(154, 194, 201);
+    font-family: Disney, sans-serif;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 1em 0;
+    font-family: Disney;
+}
+
+ul.park-list {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(25%, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding-left: 12%;
+    padding-right: 12%;
+    list-style: none;
+    align-items: flex-start;
+}
+
+ul.park-list li {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: Disney;
+}
+
+li.disneyland {
+    background-image: url("../img/disneylandFacade.avif");
+}
+
+li.california-adventure {
+    background-image: url("../img/dcaFacade.webp");
+}
+
+li.food {
+    background-image: url("../img/food.png");
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.checkbox-wrapper-30 {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.checkbox-wrapper-30 .checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.ride-name {
+    margin: 0;
+    font-family: Disney;
+}
+
+.list-header {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 1em auto;
+    font-size: 2rem;
+    font-family: Disney;
+}
+
+.list-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button {
+    align-self: center;
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    background: #B9D8C2;
+}
+
+.ride-list {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    background: #B9D8C2;
+    margin-bottom: 1em;
+}

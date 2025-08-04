@@ -44,7 +44,7 @@ ul.park-list li {
 }
 
 li.disneyland {
-    background-image: url("../img/disneylandFacade.avif");
+    background-image: url("../img/disneylandFacade.webp");
 }
 
 li.california-adventure {
@@ -52,7 +52,7 @@ li.california-adventure {
 }
 
 li.food {
-    background-image: url("../img/food.png");
+    background-image: url("../img/food.webp");
 }
 
 a {

@@ -13,6 +13,10 @@ logging.basicConfig(level=logging_level)
 stream_handler.setLevel(logging_level)
 app.logger.addHandler(stream_handler)
 
+HEADERS = {
+    "ngrok-skip-browser-warning": "true"
+}
+
 
 @app.route("/checklist", methods=["GET"])
 def get_checklist():
@@ -29,7 +33,7 @@ def get_checklist_by_land(land):
         if land not in checklist_data:
             return Response("Land not found", status=404)
         land_data = checklist_data[land]
-    return Response(json.dumps(land_data), status=200)
+    return Response(json.dumps(land_data), status=200, headers=HEADERS)
 
 
 @app.route("/checklist/<land>/<attraction_id>", methods=["PUT"])
@@ -49,7 +53,7 @@ def update_checklist(land, attraction_id):
         json.dump(checklist_data, file, indent=4)
         logging.debug(f"Updated {land} {attraction_id} to {land_data[attraction_id]['didRide']}")
 
-    return Response("OK", status=200)
+    return Response("OK", status=200, headers=HEADERS)
 
 # TODO: Implement a way to update the file with an array of attractions
 
@@ -69,12 +73,13 @@ def edit_checklist():
                 checklistParkData[attraction]["didRide"] = True
         checklistData[park] = checklistParkData
         file.write(checklistData)
+    return Response("OK", status=200, headers=HEADERS)
 
 @app.route("/test", methods=["POST"])
 def test():
     data = json.loads(request.data)
     logging.debug(data)
-    return Response("OK", status=200)
+    return Response("OK", status=200, headers=HEADERS)
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=8080)

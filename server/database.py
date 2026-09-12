@@ -12,7 +12,17 @@ class AttractionRepository:
 
     def getAttractionsByPark(self, park: str):
         query = {"park": park}
-        attractions = self.collection.find(query)
+        cursor = self.collection.find(query)
+        attractions = []
+        for item in cursor:
+            print(item)
+            attractions.append({
+                "id": item["id"],
+                "park": item["park"],
+                "land": item["land"],
+                "didRide": item["didRide"],
+                "name": item["name"]
+                })
         return attractions
 
     def toggleAttractionByID(self, park: str, id: str):

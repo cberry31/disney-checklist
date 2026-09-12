@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   disney-checklist-server:
     build:
@@ -25,3 +25,23 @@ services:
     environment:
       - API_URL=http://disney-checklist-server:8080
     restart: always
+
+  mongodb:
+    image: mongo:latest
+    container_name: local_mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=supersecretpassword
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+
+volumes:
+  mongo_data:
+    driver: local
+  mongo_config:
+    driver: local
+

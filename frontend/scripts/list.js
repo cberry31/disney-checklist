@@ -8,7 +8,6 @@ function startListPage() {
         mapping = {
             "disneyland": "Disneyland Resort",
             "california_adventure": "Disney's California Adventure",
-            "food": "Seasonal Food at Disneyland and California Adventure"
         }
         document.body.insertAdjacentHTML('afterbegin', `<h2 class="list-header">${mapping[park]}</h2>`);
     }
@@ -74,18 +73,3 @@ function submitChange(changedCheckbox) {
     });
 }
 
-function submitChecklist() {
-    const params = new URLSearchParams(window.location.search);
-    const park = params.get('park');
-    const checked = $('.ride-list input[type="checkbox"]:checked');
-    console.log(checked)
-    const checkedIds = Array.from(checked).map(cb => cb.id);
-    console.log('Checked ride IDs:', checkedIds);
-    fetch(`${window.BASE_URL}/test`, {
-        method: "POST",
-        body: JSON.stringify({
-            "park": park,
-            "checked": checkedIds
-        })
-    });
-}

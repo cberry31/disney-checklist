@@ -8,6 +8,7 @@ services:
     ports:
       - "8080:8080"
     environment:
+      - MONGO_DB_URI=mongodb://admin:supersecretpassword@mongodb:27017/?authSource=admin
       - LOGGING_LEVEL=DEBUG
     volumes:
       - ./server/data:/app/data
@@ -27,7 +28,7 @@ services:
     restart: always
 
   mongodb:
-    image: mongo:latest
+    image: mongo:4.4.18
     container_name: local_mongodb
     restart: unless-stopped
     ports:

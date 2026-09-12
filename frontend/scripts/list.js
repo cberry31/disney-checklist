@@ -23,13 +23,15 @@ function getListItems() {
     }).then(response => response.json())
         .then(data => {
             const lands = {};
-            Object.keys(data).forEach(rideKey => {
-                const ride = data[rideKey];
-                const land = ride.land || "Other";
+            console.log(data)
+            data.forEach(item => {
+                console.log(item)
+                const ride = item;
+                const land = item.land || "Other";
                 if (!lands[land]) {
                     lands[land] = [];
                 }
-                lands[land].push({ key: rideKey, ...ride });
+                lands[land].push({ key: item.id, ...ride });
             });
 
             Object.keys(lands).forEach(land => {
@@ -75,3 +77,4 @@ function submitChange(changedCheckbox) {
         method: "PUT"
     });
 }
+

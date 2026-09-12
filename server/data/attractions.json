@@ -233,12 +233,12 @@
         "317": {
             "name": "Autopia",
             "land": "Tomorrowland",
-            "didRide": false
+            "didRide": true
         },
         "273": {
             "name": "Buzz Lightyear Astro Blasters",
             "land": "Tomorrowland",
-            "didRide": false
+            "didRide": true
         },
         "274": {
             "name": "Disneyland Monorail",
@@ -253,7 +253,7 @@
         "284": {
             "name": "Space Mountain",
             "land": "Tomorrowland",
-            "didRide": false
+            "didRide": true
         },
         "286": {
             "name": "Star Tours - The Adventures Continue",

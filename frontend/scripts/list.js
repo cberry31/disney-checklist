@@ -8,7 +8,6 @@ function startListPage() {
         mapping = {
             "disneyland": "Disneyland Resort",
             "california_adventure": "Disney's California Adventure",
-            "food": "Seasonal Food at Disneyland and California Adventure"
         }
         document.body.insertAdjacentHTML('afterbegin', `<h2 class="list-header">${mapping[park]}</h2>`);
     }
@@ -24,13 +23,15 @@ function getListItems() {
     }).then(response => response.json())
         .then(data => {
             const lands = {};
-            Object.keys(data).forEach(rideKey => {
-                const ride = data[rideKey];
-                const land = ride.land || "Other";
+            console.log(data)
+            data.forEach(item => {
+                console.log(item)
+                const ride = item;
+                const land = item.land || "Other";
                 if (!lands[land]) {
                     lands[land] = [];
                 }
-                lands[land].push({ key: rideKey, ...ride });
+                lands[land].push({ key: item.id, ...ride });
             });
 
             Object.keys(lands).forEach(land => {
@@ -77,21 +78,3 @@ function submitChange(changedCheckbox) {
     });
 }
 
-function submitChecklist() {
-    const params = new URLSearchParams(window.location.search);
-    const park = params.get('park');
-    const checked = $('.ride-list input[type="checkbox"]:checked');
-    console.log(checked)
-    const checkedIds = Array.from(checked).map(cb => cb.id);
-    console.log('Checked ride IDs:', checkedIds);
-    fetch(`${window.BASE_URL}/test`, {
-        method: "POST",
-        headers: {
-            "ngrok-skip-browser-warning": true
-        },
-        body: JSON.stringify({
-            "park": park,
-            "checked": checkedIds
-        })
-    });
-}

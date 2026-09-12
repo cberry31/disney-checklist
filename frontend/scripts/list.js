@@ -16,8 +16,11 @@ function startListPage() {
 function getListItems() {
     const params = new URLSearchParams(window.location.search);
     const park = params.get('park');
-    fetch(`${window.BASE_URL}/checklist/${park}`)
-        .then(respose => respose.json())
+    fetch(`${window.BASE_URL}/checklist/${park}`, {
+        "headers": {
+            "ngrok-skip-browser-warning": true
+        }
+    }).then(response => response.json())
         .then(data => {
             const lands = {};
             Object.keys(data).forEach(rideKey => {
@@ -72,4 +75,3 @@ function submitChange(changedCheckbox) {
         method: "PUT"
     });
 }
-

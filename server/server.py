@@ -26,7 +26,7 @@ def get_checklist_by_land(land):
 
 
 @app.route("/checklist/<land>/<attraction_id>", methods=["PUT"])
-def toggle_checklist_item(attraction_id):
+def toggle_checklist_item(land, attraction_id):
     attractionRepository = AttractionRepository()
     attractionRepository.toggleAttractionByID(land, attraction_id)
     return Response("OK", status=200, headers=HEADERS)
